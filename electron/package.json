@@ -1,0 +1,44 @@
+{
+  "name": "sakura_timer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package win": "electron-builder --win",
+    "package mac": "electron-builder --mac",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "extraFiles": [
+      {
+        "from": "./audios",
+        "to": "audios",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "appId": "sakuracloud.timer.10000",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "sound-play": "^1.1.0"
+  },
+  "devDependencies": {
+    "@electron/packager": "^18.3.3",
+    "electron": "^31.0.2",
+    "electron-builder": "^24.13.3"
+  }
+}
