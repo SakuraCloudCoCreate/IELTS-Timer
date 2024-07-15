@@ -33,7 +33,7 @@ const timer = () => {
             }
 
             callback(event, timeMap);
-        }, 10);
+        }, 1000);
     };
 
     const stop = () => {
